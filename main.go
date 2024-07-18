@@ -109,20 +109,19 @@ func main() {
 		[]byte("hello5"),
 		[]byte("hello6"),
 		[]byte("hello7"),
-		[]byte("hello8"),
 	}
 	leafNodes := makeNodes(data)
 	root := makeMerkleTree(leafNodes)
 
 	fmt.Println(hexutil.Encode(root.Hash))
 
-	proof := calculateProof(leafNodes[2])
+	proof := calculateProof(leafNodes[6])
 
 	for _, v := range proof {
 		fmt.Println(hexutil.Encode(v.Sibling))
 	}
 
-	fmt.Println(verifyProof(leafNodes[2].Hash, root.Hash, proof))
+	fmt.Println(verifyProof(leafNodes[6].Hash, root.Hash, proof))
 }
 
 
