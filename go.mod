@@ -1,4 +1,4 @@
-module merkle_tree
+module github.com/parajuliswopnil/merkle_tree
 
 go 1.22.2
 
